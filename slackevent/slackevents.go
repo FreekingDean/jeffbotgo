@@ -12,16 +12,18 @@ import (
 )
 
 func SlackEvent(w http.ResponseWriter, r *http.Request) {
-	_, err := pubsub.NewClient(context.Background(), "jeffbot")
+	client, err := pubsub.NewClient(context.Background(), "jeffbot")
 	if err != nil {
 		// TODO: Handle error.
 	}
+	topic := client.Topic("slack")
 
 	buf := new(bytes.Buffer)
 	_, err = buf.ReadFrom(r.Body)
 	if err != nil {
 		log.Println(err)
 		w.WriteHeader(500)
+		return
 	}
 	body := buf.String()
 	log.Println(body)
@@ -36,7 +38,9 @@ func SlackEvent(w http.ResponseWriter, r *http.Request) {
 		var r *slackevents.ChallengeResponse
 		err := json.Unmarshal([]byte(body), &r)
 		if err != nil {
+			log.Println(err)
 			w.WriteHeader(http.StatusInternalServerError)
+			return
 		}
 		w.Header().Set("Content-Type", "text")
 		w.Write([]byte(r.Challenge))
@@ -46,7 +50,10 @@ func SlackEvent(w http.ResponseWriter, r *http.Request) {
 		switch ev := innerEvent.Data.(type) {
 		case *slackevents.MessageEvent:
 			log.Println(ev.Text)
-			//api.PostMessage(ev.Channel, slack.MsgOptionText("Yes, hello.", false))
+			_, err := topic.Publish(context.Background(), &pubsub.Message{Data: []byte(body)}).Get(context.Background())
+			if err != nil {
+				log.Println(err)
+			}
 		}
 	}
 	log.Println(body)
