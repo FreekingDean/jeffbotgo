@@ -24,6 +24,7 @@ func SlackEvent(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(500)
 	}
 	body := buf.String()
+	log.Println(body)
 	eventsAPIEvent, e := slackevents.ParseEvent(json.RawMessage(body))
 	if e != nil {
 		log.Println(e)
