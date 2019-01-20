@@ -10,7 +10,7 @@ import (
 )
 
 func SlackEvent(w http.ResponseWriter, r *http.Request) {
-	_, err := pubsub.NewClient(context.Backgound(), "jeffbot")
+	_, err := pubsub.NewClient(context.Background(), "jeffbot")
 	if err != nil {
 		// TODO: Handle error.
 	}
