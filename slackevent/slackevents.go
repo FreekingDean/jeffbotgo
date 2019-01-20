@@ -28,6 +28,7 @@ func SlackEvent(w http.ResponseWriter, r *http.Request) {
 	if e != nil {
 		log.Println(e)
 		w.WriteHeader(http.StatusInternalServerError)
+		return
 	}
 
 	if eventsAPIEvent.Type == slackevents.URLVerification {
