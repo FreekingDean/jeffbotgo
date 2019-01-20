@@ -16,14 +16,6 @@ github.com/golang/protobuf/ptypes/empty
 github.com/golang/protobuf/protoc-gen-go/descriptor
 # github.com/googleapis/gax-go v2.0.2+incompatible
 github.com/googleapis/gax-go
-# github.com/gorilla/websocket v1.4.0
-github.com/gorilla/websocket
-# github.com/nlopes/slack v0.4.0
-github.com/nlopes/slack/slackevents
-github.com/nlopes/slack
-github.com/nlopes/slack/slackutilsx
-# github.com/pkg/errors v0.8.1
-github.com/pkg/errors
 # go.opencensus.io v0.18.0
 go.opencensus.io/plugin/ocgrpc
 go.opencensus.io/stats
