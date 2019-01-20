@@ -25,7 +25,7 @@ func SlackEvent(w http.ResponseWriter, r *http.Request) {
 	}
 	body := buf.String()
 	log.Println(body)
-	eventsAPIEvent, e := slackevents.ParseEvent(json.RawMessage(body))
+	eventsAPIEvent, e := slackevents.ParseEvent(json.RawMessage(body), slackevents.OptionNoVerifyToken())
 	if e != nil {
 		log.Println(e)
 		w.WriteHeader(http.StatusInternalServerError)
