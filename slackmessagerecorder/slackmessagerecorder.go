@@ -12,7 +12,7 @@ type PubSubMessage struct {
 }
 
 // HelloPubSub consumes a Pub/Sub message.
-func HelloPubSub(ctx context.Context, m PubSubMessage) error {
+func Record(ctx context.Context, m PubSubMessage) error {
 	name := string(m.Data)
 	if name == "" {
 		name = "World"
