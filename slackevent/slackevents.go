@@ -50,9 +50,17 @@ func SlackEvent(w http.ResponseWriter, r *http.Request) {
 		switch ev := innerEvent.Data.(type) {
 		case *slackevents.MessageEvent:
 			log.Println(ev.Text)
-			_, err := topic.Publish(context.Background(), &pubsub.Message{Data: []byte(body)}).Get(context.Background())
+			data, err := json.Marshal(ev)
 			if err != nil {
 				log.Println(err)
+				w.WriteHeader(500)
+				return
+			}
+			_, err = topic.Publish(context.Background(), &pubsub.Message{Data: []byte(data)}).Get(context.Background())
+			if err != nil {
+				log.Println(err)
+				w.WriteHeader(500)
+				return
 			}
 		}
 	}
