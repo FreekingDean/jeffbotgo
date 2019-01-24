@@ -18,6 +18,8 @@ github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124220830-b8fd895048a
 github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124220830-b8fd895048ae/go.mod h1:L1uRgbuFJDbqr5KDTtuXCPjzMtLT+2RAbATrENc0CZg=
 github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124220917-6ea43090a4fb h1:HfSz8vpNtLxggo5xeexOMdGP7yUdyUN9SPyLURUtVQc=
 github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124220917-6ea43090a4fb/go.mod h1:L1uRgbuFJDbqr5KDTtuXCPjzMtLT+2RAbATrENc0CZg=
+github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124231039-5d735ccbbec0 h1:ZJF2yNTiT6m0PLtzxj49KPWJV1Y2TDo0rw5GCodiK14=
+github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124231039-5d735ccbbec0/go.mod h1:L1uRgbuFJDbqr5KDTtuXCPjzMtLT+2RAbATrENc0CZg=
 github.com/FreekingDean/slackevents v0.0.0-20190124213835-be91d85843fc h1:3HMrTlILe2WjzcGjaValPaAh8Pl9wYZmXzezgTtJFY4=
 github.com/FreekingDean/slackevents v0.0.0-20190124213835-be91d85843fc/go.mod h1:FH9at1vXRf3+mjztY9/G/CcvKl/HTT4n+rngLeBZpkk=
 github.com/FreekingDean/slackevents v0.0.1 h1:BjH+Wcf3i0Kr+UkWwUBzOJVxhuKmtGkN5+dsWRXLBbk=
