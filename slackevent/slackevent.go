@@ -24,5 +24,5 @@ func Event(event *slackevents.Callback) error {
 		return err
 	}
 
-	return pubsub.Publish(fmt.Sprintf(context.Background(), "%s.%s", "slack", event.InnerEvent.Type), data)
+	return pubsub.Publish(context.Background(), fmt.Sprintf("%s.%s", "slack", event.InnerEvent.Type), data)
 }
