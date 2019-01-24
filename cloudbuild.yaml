@@ -1,0 +1,4 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['functions', 'deploy', 'slackevent', '--trigger-http', '--runtime', 'go111', '--entry-point', 'Event', '--source', './slackevent']
+    dir: 'functions/autodeploy'
