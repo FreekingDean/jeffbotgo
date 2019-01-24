@@ -3,6 +3,7 @@ package slackmessage
 import (
 	"context"
 	"encoding/json"
+	"strings"
 
 	"github.com/FreekingDean/jeffbotgo/messages"
 	"github.com/FreekingDean/jeffbotgo/utils/pubsub"
@@ -15,6 +16,10 @@ type PubSubMessage struct {
 	Data []byte `json:"data"`
 }
 
+type SlackResponseRequest struct {
+	Channel string `json:"channel"`
+}
+
 // HelloPubSub consumes a Pub/Sub message.
 func Record(ctx context.Context, m PubSubMessage) error {
 	event := &slackevents.Message{}
@@ -22,10 +27,23 @@ func Record(ctx context.Context, m PubSubMessage) error {
 	if err != nil {
 		return err
 	}
-	&messages.Message{
+
+	if strings.Contains(event.Text, "jeffbot!!") {
+		req := messages.ResponseRequest{
+			Original:       event.Text,
+			ResponseSource: "slack",
+			ResponseMetadata: SlackResponseRequest{
+				Channel: event.Channel,
+			},
+		}
+		err = pubsub.Publish(ctx, "jeffbot.request_response", req)
+	}
+
+	message := &messages.Message{
 		Text:   event.Text,
 		Source: "slack",
-		Raw:    event,
+		Raw:    m.Data,
 	}
-	pubsub.Publish(ctx, "jeffbot.message")
+
+	return pubsub.Publish(ctx, "jeffbot.message", message)
 }

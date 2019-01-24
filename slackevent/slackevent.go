@@ -2,7 +2,6 @@ package slackevent
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"net/http"
 
@@ -19,10 +18,5 @@ func SlackEvent(w http.ResponseWriter, r *http.Request) {
 }
 
 func Event(event *slackevents.Callback) error {
-	data, err := json.Marshal(event.InnerEvent.ParsedEvent)
-	if err != nil {
-		return err
-	}
-
-	return pubsub.Publish(context.Background(), fmt.Sprintf("%s.%s", "slack", event.InnerEvent.Type), data)
+	return pubsub.Publish(context.Background(), fmt.Sprintf("%s.%s", "slack", event.InnerEvent.Type), event)
 }
