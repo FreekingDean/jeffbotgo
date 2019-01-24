@@ -1,6 +1,3 @@
-module github.com/FreekingDean/slackevent
+module github.com/FreekingDean/jeffbotgo/slackevent
 
-require (
-	github.com/FreekingDean/jeffbot/utils/pubsub v0.0.0
-	github.com/FreekingDean/slackevents v0.0.0
-)
+require github.com/FreekingDean/slackevents v0.0.0-20190124213835-be91d85843fc

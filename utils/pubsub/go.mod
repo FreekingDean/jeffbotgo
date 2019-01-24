@@ -1,4 +1,4 @@
-module github.com/FreekingDean/jeffbot/utils/pubsub
+module github.com/FreekingDean/jeffbotgo/utils/pubsub
 
 require (
 	cloud.google.com/go v0.35.1
@@ -42,11 +42,12 @@ require (
 	go4.org v0.0.0-20181109185143-00e24f1b2599 // indirect
 	golang.org/x/build v0.0.0-20190124033707-36bd60da6b75 // indirect
 	golang.org/x/crypto v0.0.0-20190123085648-057139ce5d2b // indirect
-	golang.org/x/exp v0.0.0-20190123073158-f1c91bc264ca // indirect
+	golang.org/x/exp v0.0.0-20190124213512-9bb73264daa4 // indirect
 	golang.org/x/net v0.0.0-20190119204137-ed066c81e75e // indirect
 	golang.org/x/oauth2 v0.0.0-20190115181402-5dab4167f31c // indirect
+	golang.org/x/perf v0.0.0-20190124201629-844a5f5b46f4 // indirect
 	golang.org/x/sys v0.0.0-20190124100055-b90733256f2e // indirect
-	golang.org/x/tools v0.0.0-20190124004107-78ee07aa9465 // indirect
+	golang.org/x/tools v0.0.0-20190124215303-cc6a436ffe6b // indirect
 	google.golang.org/genproto v0.0.0-20190123001331-8819c946db44 // indirect
 	google.golang.org/grpc v1.18.0 // indirect
 	honnef.co/go/tools v0.0.0-20190123181848-3f36ca0168d8 // indirect

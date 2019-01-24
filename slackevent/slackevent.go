@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/FreekingDean/jeffbot/utils/pubsub"
+	"github.com/FreekingDean/jeffbotgo/utils/pubsub"
 	"github.com/FreekingDean/slackevents"
 )
 
