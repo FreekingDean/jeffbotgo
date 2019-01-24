@@ -16,8 +16,12 @@ git.apache.org/thrift.git v0.12.0/go.mod h1:fPE2ZNJGynbRyZ4dJvy6G277gSllfV2HJqbl
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124220830-b8fd895048ae h1:SHVCmikjLSZs6tU453ygn8P9yYYyBhtcmyJexRSP19Q=
 github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124220830-b8fd895048ae/go.mod h1:L1uRgbuFJDbqr5KDTtuXCPjzMtLT+2RAbATrENc0CZg=
+github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124220917-6ea43090a4fb h1:HfSz8vpNtLxggo5xeexOMdGP7yUdyUN9SPyLURUtVQc=
+github.com/FreekingDean/jeffbotgo/utils/pubsub v0.0.0-20190124220917-6ea43090a4fb/go.mod h1:L1uRgbuFJDbqr5KDTtuXCPjzMtLT+2RAbATrENc0CZg=
 github.com/FreekingDean/slackevents v0.0.0-20190124213835-be91d85843fc h1:3HMrTlILe2WjzcGjaValPaAh8Pl9wYZmXzezgTtJFY4=
 github.com/FreekingDean/slackevents v0.0.0-20190124213835-be91d85843fc/go.mod h1:FH9at1vXRf3+mjztY9/G/CcvKl/HTT4n+rngLeBZpkk=
+github.com/FreekingDean/slackevents v0.0.1 h1:BjH+Wcf3i0Kr+UkWwUBzOJVxhuKmtGkN5+dsWRXLBbk=
+github.com/FreekingDean/slackevents v0.0.1/go.mod h1:FH9at1vXRf3+mjztY9/G/CcvKl/HTT4n+rngLeBZpkk=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
 github.com/Shopify/sarama v1.20.1/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
