@@ -2,6 +2,7 @@ package messages
 
 import (
 	"context"
+	"encoding/base64"
 	"encoding/json"
 )
 
@@ -23,6 +24,11 @@ type PubSubMessage struct {
 }
 
 func Parse(ctx context.Context, m PubSubMessage) error {
+	decoded, err := base64.StdEncoding.DecodeString(string(m.Data))
+	if err == nil {
+		m.Data = decoded
+	}
+
 	message := &Message{}
 	err := json.Unmarshal(m.Data, message)
 	if err != nil {

@@ -2,6 +2,7 @@ package slackmessage
 
 import (
 	"context"
+	"encoding/base64"
 	"encoding/json"
 	"strings"
 
@@ -22,8 +23,13 @@ type SlackResponseRequest struct {
 
 // HelloPubSub consumes a Pub/Sub message.
 func Parse(ctx context.Context, m PubSubMessage) error {
+	decoded, err := base64.StdEncoding.DecodeString(string(m.Data))
+	if err == nil {
+		m.Data = decoded
+	}
+
 	event := &slackevents.Message{}
-	err := json.Unmarshal(m.Data, event)
+	err = json.Unmarshal(m.Data, event)
 	if err != nil {
 		return err
 	}
