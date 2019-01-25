@@ -21,7 +21,7 @@ type SlackResponseRequest struct {
 }
 
 // HelloPubSub consumes a Pub/Sub message.
-func Record(ctx context.Context, m PubSubMessage) error {
+func Parse(ctx context.Context, m PubSubMessage) error {
 	event := &slackevents.Message{}
 	err := json.Unmarshal(m.Data, event)
 	if err != nil {
@@ -37,6 +37,9 @@ func Record(ctx context.Context, m PubSubMessage) error {
 			},
 		}
 		err = pubsub.Publish(ctx, "jeffbot.request_response", req)
+		if err != nil {
+			return err
+		}
 	}
 
 	message := &messages.Message{
