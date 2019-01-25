@@ -13,5 +13,5 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	client.Dataset("messages").Table("messages")
+	table = client.Dataset("messages").Table("messages")
 }
