@@ -3,7 +3,7 @@ module github.com/FreekingDean/jeffbotgo/messages
 require (
 	cloud.google.com/go v0.35.1
 	dmitri.shuralyov.com/app/changes v0.0.0-20181114035150-5af16e21babb // indirect
-	dmitri.shuralyov.com/service/change v0.0.0-20190124041518-7c09d163af9b // indirect
+	dmitri.shuralyov.com/service/change v0.0.0-20190125044705-3bb9b99b3801 // indirect
 	git.apache.org/thrift.git v0.12.0 // indirect
 	github.com/Shopify/sarama v1.20.1 // indirect
 	github.com/coreos/go-systemd v0.0.0-20181031085051-9002847aa142 // indirect
