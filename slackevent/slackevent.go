@@ -18,5 +18,5 @@ func SlackEvent(w http.ResponseWriter, r *http.Request) {
 }
 
 func Event(event *slackevents.Callback) error {
-	return pubsub.Publish(context.Background(), fmt.Sprintf("%s.%s", "slack", event.InnerEvent.Type), event)
+	return pubsub.Publish(context.Background(), fmt.Sprintf("%s.%s", "slack", event.InnerEvent.Type), event.InnerEvent.ParsedEvent)
 }
