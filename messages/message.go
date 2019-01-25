@@ -30,7 +30,7 @@ func Parse(ctx context.Context, m PubSubMessage) error {
 	}
 
 	message := &Message{}
-	err := json.Unmarshal(m.Data, message)
+	err = json.Unmarshal(m.Data, message)
 	if err != nil {
 		return err
 	}
