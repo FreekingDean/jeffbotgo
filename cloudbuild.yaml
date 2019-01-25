@@ -3,3 +3,5 @@ steps:
     args: ['functions', 'deploy', 'slackevent', '--trigger-http', '--runtime', 'go111', '--entry-point', 'SlackEvent', '--source', './slackevent']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['functions', 'deploy', 'slackmessage', '--trigger-topic', 'slack.message', '--runtime', 'go111', '--entry-point', 'Parse', '--source', './slackmessage']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['functions', 'deploy', 'jeffbotmessage', '--trigger-topic', 'jeffbot.message', '--runtime', 'go111', '--entry-point', 'Parse', '--source', './messages']
