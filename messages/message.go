@@ -60,5 +60,9 @@ func Parse(ctx context.Context, m PubSubMessage) error {
 		}
 		message.NGrams = append(message.NGrams, NGram{word1, word2, word3})
 	}
-	return table.Inserter().Put(ctx, message)
+	if err := table.Inserter().Put(ctx, message); err != nil {
+		log.Println(err)
+		return err
+	}
+	return nil
 }
