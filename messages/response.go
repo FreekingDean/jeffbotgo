@@ -74,8 +74,11 @@ func GenerateResponse(ctx context.Context, m PubSubMessage) error {
 		if len(sentence) > 20 {
 			break
 		}
-		q := client.Query(fmt.Sprintf(baseQuery2, g1, g2))
+		q = client.Query(fmt.Sprintf(baseQuery2, g1, g2))
 		it, err = q.Read(ctx)
+		if err != nil {
+			return err
+		}
 		err = it.Next(&grams)
 		if err == iterator.Done {
 			break
