@@ -64,8 +64,9 @@ func Parse(ctx context.Context, m PubSubMessage) error {
 	}
 	errs := table.Inserter().Put(ctx, message)
 	if errs != nil {
-		log.Println(errs.(bigquery.PutMultiError)[0].Error())
-		return err
+		bqe, ok := errs.(bigquery.PutMultiError)
+		log.Println(bqe[0].Error())
+		return errs
 	}
 	return nil
 }
