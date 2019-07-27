@@ -1,11 +1,11 @@
 package messages
 
 import (
-	"strings"
 	"context"
 	"encoding/base64"
 	"encoding/json"
 	"log"
+	"strings"
 )
 
 type Message struct {
@@ -47,13 +47,17 @@ func Parse(ctx context.Context, m PubSubMessage) error {
 		return err
 	}
 	message.NGrams = []NGram{}
-	word1 := ""
-	word2 := ""
-	word3 := ""
-	for i, word := strings.Split(message.Text, " ") {
-		word1 = word2
-		word2 = word3
-		word3 = word
+	words := strings.Split(message.Text, " ")
+	for i := 0; i < len(words); i++ {
+		word1 := words[i]
+		word2 := ""
+		if i < len(words)-1 {
+			word2 = words[i+1]
+		}
+		word3 := ""
+		if i < len(words)-2 {
+			word3 = words[i+2]
+		}
 		message.NGrams = append(message.NGrams, NGram{word1, word2, word3})
 	}
 	return table.Inserter().Put(ctx, message)
