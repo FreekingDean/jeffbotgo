@@ -23,13 +23,6 @@ type NGram struct {
 	Gram3 string `json:"gram_3" bigquery:"gram_3"`
 }
 
-type ResponseRequest struct {
-	Original         string      `json:"original"`
-	Response         string      `json:"response"`
-	ResponseSource   string      `json:"response_source"`
-	ResponseMetadata interface{} `json:"response_metadata"`
-}
-
 type PubSubMessage struct {
 	Data []byte `json:"data"`
 }

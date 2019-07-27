@@ -8,3 +8,6 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['functions', 'deploy', 'jeffbotmessage', '--trigger-topic', 'jeffbot.message', '--runtime', 'go111', '--entry-point', 'Parse', '--source', './messages']
     waitFor: ['-']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['functions', 'deploy', 'jeffbotrequestresponse', '--trigger-topic', 'jeffbot.request_response', '--runtime', 'go111', '--entry-point', 'GenerateResponse', '--source', './messages']
+    waitFor: ['-']

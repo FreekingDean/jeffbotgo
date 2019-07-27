@@ -7,6 +7,7 @@ require (
 	git.apache.org/thrift.git v0.12.0 // indirect
 	github.com/Shopify/sarama v1.20.1 // indirect
 	github.com/coreos/go-systemd v0.0.0-20181031085051-9002847aa142 // indirect
+	github.com/deckarep/golang-set v1.7.1 // indirect
 	github.com/go-logfmt/logfmt v0.4.0 // indirect
 	github.com/gogo/protobuf v1.2.0 // indirect
 	github.com/golang/lint v0.0.0-20181217174547-8f45f776aaf1 // indirect
@@ -16,6 +17,8 @@ require (
 	github.com/gregjones/httpcache v0.0.0-20181110185634-c63ab54fda8f // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.7.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2 // indirect
+	github.com/mingrammer/commonregex v1.0.0 // indirect
+	github.com/montanaflynn/stats v0.5.0 // indirect
 	github.com/openzipkin/zipkin-go v0.1.5 // indirect
 	github.com/pkg/errors v0.8.1 // indirect
 	github.com/prometheus/client_model v0.0.0-20190115171406-56726106282f // indirect
@@ -42,14 +45,16 @@ require (
 	go4.org v0.0.0-20181109185143-00e24f1b2599 // indirect
 	golang.org/x/build v0.0.0-20190125014518-ad59fb13d315 // indirect
 	golang.org/x/crypto v0.0.0-20190123085648-057139ce5d2b // indirect
-	golang.org/x/exp v0.0.0-20190124213512-9bb73264daa4 // indirect
 	golang.org/x/net v0.0.0-20190125002852-4b62a64f59f7 // indirect
 	golang.org/x/oauth2 v0.0.0-20190115181402-5dab4167f31c // indirect
 	golang.org/x/perf v0.0.0-20190124201629-844a5f5b46f4 // indirect
 	golang.org/x/sys v0.0.0-20190124100055-b90733256f2e // indirect
-	golang.org/x/tools v0.0.0-20190124215303-cc6a436ffe6b // indirect
+	gonum.org/v1/gonum v0.0.0-20190724213354-3129c79de289 // indirect
+	google.golang.org/api v0.1.0
 	google.golang.org/genproto v0.0.0-20190123001331-8819c946db44 // indirect
 	google.golang.org/grpc v1.18.0 // indirect
+	gopkg.in/jdkato/prose.v2 v2.0.0-20180825173540-767a23049b9e
+	gopkg.in/neurosnap/sentences.v1 v1.0.6 // indirect
 	honnef.co/go/tools v0.0.0-20190123181848-3f36ca0168d8 // indirect
 	sourcegraph.com/sqs/pbtypes v1.0.0 // indirect
 )

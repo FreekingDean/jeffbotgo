@@ -7,9 +7,11 @@ import (
 )
 
 var table *bigquery.Table
+var client *bigquery.Client
 
 func init() {
-	client, err := bigquery.NewClient(context.Background(), "jeffbot")
+	var err error
+	client, err = bigquery.NewClient(context.Background(), "jeffbot")
 	if err != nil {
 		panic(err)
 	}
