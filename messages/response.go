@@ -11,11 +11,11 @@ import (
 )
 
 const baseQuery1 = `
- WITH message as (SELECT n_grams as grams FROM messages.messages WHERE ARRAY_LENGTH(n_grams) > 0 LIMIT 10) SELECT gram_1, gram_2, gram_3, count(*) as popularity FROM message, unnest(grams) WHERE gram_1 = "%s" GROUP BY gram_1, gram_2, gram_3 ORDER BY popularity DESC
+ WITH message as (SELECT n_grams as grams FROM messages.messages WHERE ARRAY_LENGTH(n_grams) > 0) SELECT gram_1, gram_2, gram_3, count(*) as popularity FROM message, unnest(grams) WHERE gram_1 = "%s" GROUP BY gram_1, gram_2, gram_3 ORDER BY popularity DESC LIMIT 10
  `
 
 const baseQuery2 = `
- WITH message as (SELECT n_grams as grams FROM messages.messages WHERE ARRAY_LENGTH(n_grams) > 0 LIMIT 10) SELECT gram_1, gram_2, gram_3, count(*) as popularity FROM message, unnest(grams) WHERE gram_1 = "%s" AND gram_2 = "%s" GROUP BY gram_1, gram_2, gram_3 ORDER BY popularity DESC
+ WITH message as (SELECT n_grams as grams FROM messages.messages WHERE ARRAY_LENGTH(n_grams) > 0) SELECT gram_1, gram_2, gram_3, count(*) as popularity FROM message, unnest(grams) WHERE gram_1 = "%s" AND gram_2 = "%s" GROUP BY gram_1, gram_2, gram_3 ORDER BY popularity DESC LIMIT 10
  `
 
 type ResponseRequest struct {
