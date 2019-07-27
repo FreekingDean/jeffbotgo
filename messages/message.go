@@ -6,6 +6,8 @@ import (
 	"encoding/json"
 	"log"
 	"strings"
+
+	"cloud.google.com/go/bigquery"
 )
 
 type Message struct {
@@ -60,8 +62,9 @@ func Parse(ctx context.Context, m PubSubMessage) error {
 		}
 		message.NGrams = append(message.NGrams, NGram{word1, word2, word3})
 	}
-	if err := table.Inserter().Put(ctx, message); err != nil {
-		log.Println(err)
+	errs := table.Inserter().Put(ctx, message)
+	if errs != nil {
+		log.Println(err.(bigquery.PutMultiError)[0].Error())
 		return err
 	}
 	return nil
