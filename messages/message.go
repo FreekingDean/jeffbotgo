@@ -18,9 +18,9 @@ type Message struct {
 }
 
 type NGram struct {
-	Gram1 string `json:"gram_1" bigquery:gram_1"`
-	Gram2 string `json:"gram_2" bigquery:gram_2"`
-	Gram3 string `json:"gram_3" bigquery:gram_3"`
+	Gram1 string `json:"gram_1" bigquery:"gram_1"`
+	Gram2 string `json:"gram_2" bigquery:"gram_2"`
+	Gram3 string `json:"gram_3" bigquery:"gram_3"`
 }
 
 type ResponseRequest struct {
