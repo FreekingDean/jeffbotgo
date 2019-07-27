@@ -12,7 +12,7 @@ import (
 
 type Message struct {
 	Text   string  `json:"text" bigquery:"text"`
-	NGrams []NGram `json:"n_grams" bigquery:"n_gram"`
+	NGrams []NGram `json:"n_grams" bigquery:"n_grams"`
 	Source string  `json:"source" bigquery:"source"`
 	Raw    []byte  `json:"raw" bigquery:"raw"`
 }
