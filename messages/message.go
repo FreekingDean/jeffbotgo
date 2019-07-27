@@ -42,7 +42,7 @@ func Parse(ctx context.Context, m PubSubMessage) error {
 		return err
 	}
 	message.NGrams = []NGram{}
-	words := strings.Split(message.Text, " ")
+	words := strings.Split(strings.ToLower(message.Text), " ")
 	for i := 0; i < len(words); i++ {
 		word1 := words[i]
 		word2 := ""
