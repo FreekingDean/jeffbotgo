@@ -46,9 +46,12 @@ func GenerateResponse(ctx context.Context, m PubSubMessage) error {
 		return err
 	}
 	subject := doc.Tokens()[0].Text
+	log.println(subject)
 	for _, tkn := range doc.Tokens() {
 		if tkn.Tag == "NN" || tkn.Tag == "NNP" || tkn.Tag == "NNPS" || tkn.Tag == "NNS" {
 			subject = tkn.Text
+			log.println(subject)
+			break
 		}
 	}
 
