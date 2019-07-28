@@ -8,6 +8,7 @@ import (
 	"google.golang.org/api/iterator"
 	"gopkg.in/jdkato/prose.v2"
 	"log"
+	"math/rand"
 )
 
 const baseQuery1 = `
@@ -66,7 +67,7 @@ func GenerateResponse(ctx context.Context, m PubSubMessage) error {
 	if err != nil {
 		return err
 	}
-	sentence := []string{grams.Gram2}
+	sentence := []string{subject, grams.Gram2}
 
 	g1 := subject
 	g2 := grams.Gram2
@@ -79,12 +80,20 @@ func GenerateResponse(ctx context.Context, m PubSubMessage) error {
 		if err != nil {
 			return err
 		}
-		err = it.Next(&grams)
-		if err == iterator.Done {
+		if it.TotalRows <= 0 {
 			break
 		}
-		if err != nil {
-			return err
+		for {
+			err = it.Next(&grams)
+			if err == iterator.Done {
+				break
+			}
+			if err != nil {
+				return err
+			}
+			if rand.Float32() < 0.85 {
+				break
+			}
 		}
 		sentence = append(sentence, grams.Gram3)
 	}

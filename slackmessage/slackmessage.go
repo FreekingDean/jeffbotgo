@@ -40,6 +40,7 @@ func Parse(ctx context.Context, m PubSubMessage) error {
 	log.Printf("%+v\n", event)
 
 	if strings.Contains(event.Text, "jeffbot!!") {
+		event.Text = strings.Replace(event.Text, "jeffbot!!", "", -1)
 		req := messages.ResponseRequest{
 			Original:       event.Text,
 			ResponseSource: "slack",
